@@ -37,12 +37,11 @@ let airportData = "https://raw.githubusercontent.com/TannerOrmanoski/Mapping_Ear
 // Grabbing our GeoJSON data.
 d3.json(airportData).then(function(data) {
     console.log(data);
-    
   // Creating a GeoJSON layer with the retrieved data.
-  L.geoJSON(data, {
-      onEachFeature: function(feature, layer){
-          console.log(layer);
-          layer.bindPopup("<h2> Airport City: " + feature.properties.city+ "</h2>");
+  L.geoJson(data, {
+        onEachFeature: function(feature, layer) {
+            console.log(layer);
+            layer.bindPopup("<h2> Airport City: " + feature.properties.city+ "</h2>");
         }
-      }).addTo(map);
-  });
+    }).addTo(map);
+ });
